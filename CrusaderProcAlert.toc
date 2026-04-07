@@ -1,0 +1,7 @@
+## Interface: 20500
+## Title: Crusader Proc Alert
+## Notes: Plays a sound when Crusader procs
+## Author: You
+## Version: 1.0
+
+CrusaderProcAlert.lua
