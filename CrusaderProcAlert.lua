@@ -5,6 +5,8 @@ local BUFF_NAME = "Holy Strength"
 
 frame:RegisterEvent("UNIT_AURA")
 
+local active = false
+
 frame:SetScript("OnEvent", function(self, event, unit)
     if unit ~= "player" then return end
 
