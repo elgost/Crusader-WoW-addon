@@ -8,14 +8,23 @@ frame:RegisterEvent("UNIT_AURA")
 frame:SetScript("OnEvent", function(self, event, unit)
     if unit ~= "player" then return end
 
+    local found = false
+
     for i = 1, 40 do
         local name = UnitBuff("player", i)
         if not name then break end
 
         if name == BUFF_NAME then
-            PlaySoundFile("Interface\\AddOns\\CrusaderProcAlert\\crusader.mp3", "Master")
-            return
+            found = true
+            break
         end
+    end
+
+    if found and not active then
+        active = true
+        PlaySoundFile("Interface\\AddOns\\CrusaderProcAlert\\sound.mp3", "Master")
+    elseif not found then
+        active = false
     end
 end)
 
